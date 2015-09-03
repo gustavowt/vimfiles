@@ -19,4 +19,4 @@ set guioptions-=T
 set gcr=n:blinkon0
 
 " some transparency
-set transparency=4
+set transparency=2

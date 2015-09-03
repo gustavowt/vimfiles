@@ -11,15 +11,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
-Plugin 'jpo/vim-railscasts-theme'
 Plugin 'tpope/vim-fugitive'
+Plugin 'gustavowt/vim-railscasts-theme'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'groenewege/vim-less'
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-set t_Co=256          " 256 colors scheme
 colorscheme railscasts
+set t_Co=256          " 256 colors scheme
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
@@ -32,6 +35,7 @@ set noerrorbells      " don't beep
 set autoindent        " make new lines keep current indentation
 set hidden            " Navigate through buffers without vim whinings on unsaved buffers
 set nofoldenable      " No folding
+set shell=/bin/bash
 
 " Remember last location in file, but not for commit messages (see :help last-position-jump)
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
