@@ -16,6 +16,19 @@ Plugin 'gustavowt/vim-railscasts-theme'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'groenewege/vim-less'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'skammer/vim-css-color'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-rails'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
+
+" ack.vim using silver searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
