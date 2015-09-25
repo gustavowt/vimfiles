@@ -24,6 +24,14 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-endwise'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+set tags=./tags;
 
 " ack.vim using silver searcher
 if executable('ag')
