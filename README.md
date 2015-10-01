@@ -12,3 +12,6 @@ My vimfile. Use however you want.
 #Main Features
  - `\n` for NERDTree
  - `\b` for BufferGator
+ - `Ctrl+p` for FuzzyFinder (CtrlP)
+ - `:Ack` for find in project (uses the silver searcher as default)
+ - `ctags --exclude=.git --exclude=log *` in a current project to use Ctags
