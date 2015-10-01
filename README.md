@@ -1,5 +1,5 @@
 # vimfiles
-my vimfiles
+My vimfile. Use however you want.
 
 #instalation
 ```sh
