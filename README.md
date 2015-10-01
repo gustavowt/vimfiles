@@ -8,3 +8,7 @@ My vimfile. Use however you want.
   ln -s ~/.vim/vimrc ~/.vimrc
   ln -s ~/.vim/gvimrc ~/.gvimrc
 ```
+
+#Main Features
+ - `\n` for NERDTree
+ - `\b` for BufferGator
