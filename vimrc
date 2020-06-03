@@ -127,6 +127,7 @@ set wildignore+=data,tmp,vendor,log,script
 ""
 set backupdir=~/.vim/_backup/    " where to put backup files.
 set noswapfile                   " disable swap files.
+set mmp=5000
 
 ""
 "" Status Line
@@ -156,6 +157,7 @@ map <leader>x :Kwbd<CR>
 
 " NERDTree mappings
 map <leader>n :NERDTreeToggle<CR>
+nmap <leader>rn :NERDTreeFind<CR>
 
 " BufferGator mappings
 nmap <leader>b :BuffergatorToggle<CR>

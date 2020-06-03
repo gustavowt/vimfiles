@@ -2,8 +2,8 @@
 autocmd VimResized * wincmd =
 
 " Font family and font size.
-set guifont=Monaco\ for\ Powerline:h13.45
-" set guifont=Monaco:h12.00
+" set guifont=Monaco:h13.45
+set guifont=Monaco\ for\ Powerline:14.00
 
 " smooth fonts.
 set antialias
