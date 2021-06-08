@@ -31,8 +31,16 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'unkiwii/vim-nerdtree-sync'
+Plugin 'dense-analysis/ale'
 
 set tags=./tags;
+
+" Touchbar
+an TouchBar.Navigate.Next  :next<CR>
+an TouchBar.Navigate.Prev  :prev<CR>
+an TouchBar.Hello          :echo "Hello"<CR>
+inoremenu TouchBar.-characterpicker-	<Nop>
 
 " ack.vim using silver searcher
 if executable('ag')
@@ -100,6 +108,13 @@ set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
+""
+"" Ctrl-P rejections (improve performance)
+""
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+""if executable('rg')
+""  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+""endif
 
 ""
 "" Wild settings
@@ -246,6 +261,7 @@ let g:airline_powerline_fonts=1
 
 "" UltiSnips
 let g:UltiSnipsEditSplit="vertical"
+let g:snipMate = { 'snippet_version' : 1 }
 
 "" vim-go
 let g:go_highlight_functions = 1
