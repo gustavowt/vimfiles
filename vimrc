@@ -65,7 +65,8 @@ set noerrorbells      " don't beep
 set autoindent        " make new lines keep current indentation
 set hidden            " Navigate through buffers without vim whinings on unsaved buffers
 set nofoldenable      " No folding
-set shell=/bin/bash
+set shell=/usr/local/bin/fish
+set splitbelow
 
 " Remember last location in file, but not for commit messages (see :help last-position-jump)
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -158,6 +159,14 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Y copies until the end of the line
 nnoremap Y y$
+
+" Terminal commands
+nmap <leader>t :terminal ++rows=10<CR>
+" Double escape for normal mode on terminal
+tnoremap <Esc><Esc> <C-\><C-n>
+
+" Ale fixed
+nmap <leader>fr :ALEFix rubocop<CR>
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
