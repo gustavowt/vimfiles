@@ -1,0 +1,12 @@
+snippet	mc "Build module and class initializations" b
+# frozen_string_literal: true
+
+module ${2:`!p snip.rv = snip.basename.title().replace('_', '')`}
+	class ${3:`!p snip.rv = snip.basename.title().replace('_', '')`}
+		attr_reader :${1:method}
+		def initialize($1)
+			@$1 = $1
+		end
+	end
+end
+endsnippet

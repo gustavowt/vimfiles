@@ -33,6 +33,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'unkiwii/vim-nerdtree-sync'
 Plugin 'dense-analysis/ale'
+Plugin 'nicwest/vim-camelsnek'
+Plugin 'tmhedberg/matchit'
+
+Plugin 'SirVer/ultisnips'
 
 set tags=./tags;
 
@@ -160,6 +164,8 @@ cmap w!! %!sudo tee > /dev/null %
 " Y copies until the end of the line
 nnoremap Y y$
 
+" Change selected text from name_like_this to NameLikeThis.
+
 " Terminal commands
 nmap <leader>t :terminal ++rows=10<CR>
 " Double escape for normal mode on terminal
@@ -186,6 +192,9 @@ nmap <leader>rn :NERDTreeFind<CR>
 " BufferGator mappings
 nmap <leader>b :BuffergatorToggle<CR>
 
+" camelcase
+nmap <leader>c :Camel<CR>
+
 " Fugitive mappings
 map <leader>gb :Gblame<CR>
 map <leader>gs :Gstatus<CR>
@@ -196,6 +205,12 @@ map <leader>rf :set ft=ruby<CR>
 
 " UltiSnips
 map <leader>s :UltiSnipsEdit<CR>
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Map Command-# and Leader-# to switch tabs
 map  <D-0> 0gt
