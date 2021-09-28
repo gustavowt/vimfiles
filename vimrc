@@ -17,7 +17,6 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'groenewege/vim-less'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'skammer/vim-css-color'
-Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'kchmck/vim-coffee-script'
@@ -35,6 +34,8 @@ Plugin 'unkiwii/vim-nerdtree-sync'
 Plugin 'dense-analysis/ale'
 Plugin 'nicwest/vim-camelsnek'
 Plugin 'tmhedberg/matchit'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'SirVer/ultisnips'
 
@@ -71,6 +72,17 @@ set hidden            " Navigate through buffers without vim whinings on unsaved
 set nofoldenable      " No folding
 set shell=/usr/local/bin/fish
 set splitbelow
+set background=dark
+
+" Enable true color 启用终端24位色
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" mouse type
+set mouse=a
 
 " Remember last location in file, but not for commit messages (see :help last-position-jump)
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -116,11 +128,21 @@ set smartcase   " ... unless they contain at least one capital letter
 ""
 "" Ctrl-P rejections (improve performance)
 ""
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+""let g:ctrlp_user_command = ['.git/',  'git --git-dir=%s/.git ls-files -oc --exclude-standard', 'node_modules/', 'app/javascript/']
 ""if executable('rg')
 ""  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
 ""endif
-
+"" FZF
+set rtp+=/usr/local/bin/fzf
+nnoremap <silent> <C-p> :Files<CR>
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+" - Popup window (center of the current window)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
+let g:fzf_tags_command = 'ctags -R'
 ""
 "" Wild settings
 ""
